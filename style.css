@@ -1,0 +1,61 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #eaeaea;
+}
+.button{
+    position: relative;
+    height: 60px;
+    width: 300px;
+    background-color: #9521ca;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    overflow: hidden;
+}
+.button .text{
+    position: relative;
+}
+.button::before{
+    content: "";
+    position: absolute;
+    border-radius: 6px;
+    height: 100%;
+    width: 100%;
+    background-color: #6c089b;
+    top: 0;
+    left: -100%;
+}
+.button.progress::before{
+    animation: progress 5s ease-in forwards;
+    pointer-events: none;
+}
+@keyframes progress{
+    0%{
+        left: -100%;
+    }
+    25%{
+        left: -70%;
+    }
+    50%{
+        left: -30%;
+    }
+    75%{
+        left: -10%;
+    }
+    100%{
+        left: 0;
+    }
+}
